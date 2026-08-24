@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سامانه توسعه رهبری | Leadership Development OS</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+
+<div class="app">
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar" aria-label="ناوبری اصلی">
+    <div class="sb-brand">
+      <div class="sb-logo" id="sbLogo"></div>
+      <div><h1>مسیر رهبری</h1><span>Leadership Development OS</span></div>
+    </div>
+    <nav class="sb-nav" id="sbNav"></nav>
+    <div class="sb-foot">
+      <button class="sb-user" data-nav="profile">
+        <div class="av" style="background:linear-gradient(135deg,#6D66F2,#4338CA)">م‌ا</div>
+        <div><h4>محمد احمدی</h4><span>مدیر ارشد فناوری اطلاعات</span></div>
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main">
+    <header class="topbar">
+      <button class="ibtn hamb" id="hambBtn" aria-label="منو"></button>
+      <div class="tb-title">
+        <div class="tb-crumb">سامانه توسعه رهبری <span style="margin:0 4px">/</span> <span id="crumbPage"></span></div>
+        <h2 id="tbTitle">مرکز فرماندهی</h2>
+      </div>
+      <div class="tb-end">
+        <button class="tb-search" id="palOpen"><span id="tbSearchIco"></span><span>جستجو یا فرمان…</span><kbd>Ctrl K</kbd></button>
+        <button class="ibtn" id="notifBtn" aria-label="اعلان‌ها"><span id="bellIco"></span><span class="dot" id="notifDot"></span></button>
+        <button class="ibtn" data-nav="profile" aria-label="پروفایل"><div class="av sm" style="background:var(--brand)">م‌ا</div></button>
+      </div>
+    </header>
+    <main class="view" id="view" tabindex="-1" aria-live="polite"></main>
+  </div>
+</div>
+
+<!-- MOBILE NAV -->
+<nav class="mnav" id="mnav" aria-label="ناوبری موبایل"></nav>
+
+<div class="scrim" id="scrim"></div>
+
+<!-- DETAIL DRAWER -->
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true">
+  <div class="dr-hd"><h3 id="drTitle"></h3><button class="ibtn" id="drClose" aria-label="بستن"></button></div>
+  <div class="dr-bd" id="drBody"></div>
+  <div class="dr-ft" id="drFoot"></div>
+</aside>
+
+<!-- NOTIFICATIONS -->
+<aside class="npanel" id="npanel" role="dialog" aria-modal="true">
+  <div class="dr-hd"><h3>اعلان‌ها</h3><button class="linkb" data-action="notif-readall">خواندن همه</button><button class="ibtn" id="npClose" aria-label="بستن"></button></div>
+  <div style="flex:1;overflow-y:auto;padding:12px" id="npList"></div>
+</aside>
+
+<!-- COMMAND PALETTE -->
+<div class="pal" id="pal" role="dialog" aria-label="جستجوی سراسری">
+  <div class="pal-in"><span id="palIco"></span><input id="palInput" placeholder="جستجو در شایستگی، پروژه، هدف، محتوا…" autocomplete="off"><kbd>ESC</kbd></div>
+  <div class="pal-list" id="palList"></div>
+</div>
+
+<!-- MODAL -->
+<div class="mroot" id="mroot">
+  <div class="mbg" id="mbg"></div>
+  <div class="modal" id="modal" role="dialog" aria-modal="true">
+    <div class="m-hd"><h3 id="mTitle"></h3><button class="ibtn" id="mClose" aria-label="بستن"></button></div>
+    <div class="m-bd" id="mBody"></div>
+    <div class="m-ft" id="mFoot"></div>
+  </div>
+</div>
+
+<div class="toasts" id="toasts"></div>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
+
